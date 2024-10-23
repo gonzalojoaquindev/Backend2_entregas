@@ -30,23 +30,29 @@ export const iniciarPassport = () => {
             async (req, username, password, done) => {
                 console.log("ingresa")
                 try {
-                    let { nombre } = req.body
-                    if (!nombre) {
+                    let { first_name } = req.body
+                    console.log(req.body)
+                    if (!first_name) {
                         console.log("falta nombre")
                         return done(null, false, { message: `Complete el nombre` })
                     }
                     let existe = await UsuariosManager.getBy({ email: username })
 
                     if (existe) {
-                        // console.log(`existe`)
+                        console.log(`Ya existe un usuario con email ${username} `)
                         // console.log(existe)
                         return done(null, false, { message: `Ya existe un usuario con email ${username}` })
                     }
 
+                    let { last_name, age, cart, rol } = req.body
+
+
+
 
                     password = generaHash(password)
 
-                    let nuevoUsuario = await UsuariosManager.addUser({ nombre, email: username, password })
+
+                    let nuevoUsuario = await UsuariosManager.addUser({ first_name, last_name, age, cart, rol, email: username, password })
                     return done(null, nuevoUsuario)
 
 

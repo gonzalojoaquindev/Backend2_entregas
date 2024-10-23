@@ -2,8 +2,8 @@ const inputEmail = document.getElementById("email")
 const inputPass = document.getElementById("password")
 const btnSubmit = document.getElementById("btnSubmit")
 
-const divVillanos = document.getElementById("divVillanos")
-const aVillanos = document.getElementById("aVillanos")
+const divProductos = document.getElementById("divProductos")
+const aProductos = document.getElementById("aProductos")
 
 btnSubmit.addEventListener("click", async (e) => {
     e.preventDefault()
@@ -35,10 +35,10 @@ btnSubmit.addEventListener("click", async (e) => {
     }
 })
 
-aVillanos.addEventListener("click", async (e) => {
+aProductos.addEventListener("click", async (e) => {
     e.preventDefault()
-    console.log(divVillanos)
-    divVillanos.textContent = ""
+    console.log("Obteniendo productos")
+    divProductos.textContent = ""
 
     let respuesta = await fetch("api/products?limit=15&page=1&sort=asc", {
         /* headers: {
@@ -49,7 +49,7 @@ aVillanos.addEventListener("click", async (e) => {
     console.log(data) */
     if (respuesta.status >= 400) {
         let { error } = await respuesta.json()
-        divVillanos.textContent = error
+        divProductos.textContent = error
         console.log(error)
         /*  divVillanos.textContent = "No tiene permisos para ver los villanos" */
     } else {
@@ -57,14 +57,14 @@ aVillanos.addEventListener("click", async (e) => {
         let productos = data.products.docs
         console.log(productos)
 
-        let ulVillanos = document.createElement("ul")
+        let ulProductos = document.createElement("ul")
         productos.forEach(producto => {
             let li = document.createElement("li")
             li.textContent = producto.title
-            ulVillanos.append(li)
+            ulProductos.append(li)
 
         });
-        divVillanos.append(ulVillanos)
+        divProductos.append(ulProductos)
     }
 
 })
