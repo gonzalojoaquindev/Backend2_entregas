@@ -1,0 +1,16 @@
+<div>
+    <h1>Productos</h1>
+    <a href="/api/products/realtimeproducts">Real time products</a>
+    {{#each products}}
+    <div>
+        <ul>
+            <li>{{this.title}} - {{this.description}} - ${{this.price}}</li>
+        </ul>
+    </div>
+    {{/each}}
+</div>
+
+<!-- se le tiene que agregar este script para tener socket en el fronted -->
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/index.js"></script>

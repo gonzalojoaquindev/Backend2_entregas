@@ -1,0 +1,26 @@
++<div>
+    <h1>Hola ctm {{user.name}} desde handlebars</h1>
+    {{#if isAdmin}}
+    {{#each food}}
+    <div>
+        <p>{{this.name}}</p>
+        <p>{{this.price}}</p>
+    </div>
+    {{/each}}
+    {{else}}
+    <p>No tienes los permisos para ver la lista de alimentos</p>
+
+    {{/if}}
+    {{gonzalito}}
+
+    {{#each products}}
+    <div>
+        <ul>
+            <li>{{this.title}} - {{this.description}} - ${{this.price}}</li>
+        </ul>
+    </div>
+    {{/each}}
+</div>
+
+
+<script src="/js/index.js"></script>

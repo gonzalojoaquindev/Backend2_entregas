@@ -1,0 +1,92 @@
+<div>
+    <h1>Productos real time</h1>
+    <a href="/api/products">Home</a>
+    {{!-- <input type="text" id="title" placeholder="Titulo">
+    <input type="text" id="Description" placeholder="Escribe tu apellido"> --}}
+    {{!-- <input type="text" id="title" label="Titulo" placeholder="titulo">
+    <input type="text" id="description" label="Descripción" placeholder="Descripción">
+    <input type="text" id="code" label="Código" placeholder="Código">
+    <input type="number" id="price" label="Precio" placeholder="Precio">
+    <input type="text" id="status" label="Estado" placeholder="Estado">
+    <input type="number" id="stock" label="Stock" placeholder="Stock">
+    <input type="text" id="category" label="Categoria" placeholder="Categoria"> --}}
+    {{!-- <input type="submit" value="Enviar"> --}}
+    <div class="row">
+
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="title" label="Titulo" placeholder="Titulo" class="grey-text text-lighten-5">
+                <label for="title">Titulo</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="number" id="price" label="Precio" placeholder="Precio" class="grey-text text-lighten-5">
+                <label for="last_name">Precio</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="text" id="description" label="Descripción" placeholder="Descripción"
+                    class="grey-text text-lighten-5">
+                <label>Descripción</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="code" label="Código" placeholder="Código" class="grey-text text-lighten-5">
+                <label>Código</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="text" id="category" label="Categoria" placeholder="Categoria"
+                    class="grey-text text-lighten-5">
+                <label>Categoria</label>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s6">
+                <input type="text" id="status" label="Estado" placeholder="Estado" class="grey-text text-lighten-5">
+                <label>Estado</label>
+            </div>
+            <div class="input-field col s6">
+                <input type="number" id="stock" label="Stock" placeholder="Stock" class="grey-text text-lighten-5">
+                <label>Stock</label>
+            </div>
+        </div>
+    </div>
+    <button class="btn waves-effect waves-light" onclick="enviarMensaje()">Enviar
+        <i class="material-icons right">send</i>
+    </button>
+
+
+
+    {{!-- <button onclick="enviarMensaje()">Enviar</button> --}}
+
+
+    <div class="row" id="divProducts">
+        {{!-- <div class="col s4 m4" id="divProducts">
+        </div> --}}
+    </div>
+
+
+
+
+    {{!-- <form action="/api/realtimeproducts" method="post">
+        <input type="text" id="title" label="Titulo" placeholder="titulo">
+        <input type="text" name="description" label="Descripción" placeholder="Descripción">
+        <input type="text" name="code" label="Código" placeholder="Código">
+        <input type="number" name="price" label="Precio" placeholder="Precio">
+        <input type="text" name="status" label="Estado" placeholder="Estado">
+        <input type="number" name="stock" label="Stock" placeholder="Stock">
+        <input type="text" name="category" label="Categoria" placeholder="Categoria">
+        <input type="submit" value="Enviar">
+    </form>
+    --}}
+
+
+
+
+    <div id="productos"></div>
+
+</div>
+
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/realTime.js"></script>
